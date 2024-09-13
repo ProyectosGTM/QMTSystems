@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   submitted = false;
   error = '';
   returnUrl: string;
+  public loading: boolean = false;
 
   // set the currenr year
   year: number = new Date().getFullYear();
@@ -52,6 +53,11 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   ngOnDestroy() { 
     document.body.classList.remove('authentication-bg')
+  }
+
+  type = 'password';
+  myFunctionPasswordCurrent() {
+    this.type = this.type === "password" ? "text" : "password";
   }
 
   // convenience getter for easy access to form fields

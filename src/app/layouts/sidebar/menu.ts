@@ -25,24 +25,41 @@ export const MENU: MenuItem[] = [
     //     label: 'MENUITEMS.APPS.TEXT',
     //     isTitle: true
     // },
-    // {
-    //     id: 5,
-    //     label: 'MENUITEMS.CALENDAR.TEXT',
-    //     icon: 'uil-calender',
-    //     link: '/calendar',
-    // },
-    // {
-    //     id: 6,
-    //     label: 'MENUITEMS.CHAT.TEXT',
-    //     icon: 'uil-comments-alt',
-    //     link: '/chat',
-    // },
-    // {
-    //     id: 6,
-    //     label: 'MENUITEMS.FILEMANAGER.TEXT',
-    //     icon: 'uil-comments-alt',
-    //     link: '/file-manager',
-    // },
+     {
+         id: 5,
+         label: 'Usuarios',
+         icon: 'uil-users-alt',
+         link: '/calendar',
+     },
+     {
+         id: 6,
+         label: 'Permisos',
+         icon: 'uil-comments-alt',
+         link: '/chat',
+     },
+     {
+         id: 6,
+         label: 'Clientes',
+         icon: 'uil-user-check',
+         link: '/file-manager',
+     },
+     {
+        id: 6,
+        label: 'Roles',
+        icon: 'uil-gold',
+        link: '/file-manager',
+    },
+     {
+        id: 109,
+         label: 'Trabajo',
+         isTitle: true
+    },
+    {
+         id: 110,
+         label: 'MENUITEMS.PRUEBA.TEXT',
+         icon: 'uil-money-withdraw',
+         link: '/ecommerce/orders',
+     },
     // {
     //     id: 7,
     //     label: 'MENUITEMS.ECOMMERCE.TEXT',
@@ -561,11 +578,11 @@ export const MENU: MenuItem[] = [
     //         }
     //     ]
     // },
-    {
-        id: 109,
-        label: 'MENUITEMS.PRUEBACOMPONENT.TEXT',
-        isTitle: true
-    },
+    // {
+    //     id: 109,
+    //     label: 'MENUITEMS.PRUEBACOMPONENT.TEXT',
+    //     isTitle: true
+    // },
     // {
     //     id: 110,
     //     label: 'MENUITEMS.PRUEBA.TEXT',
@@ -578,12 +595,12 @@ export const MENU: MenuItem[] = [
     //     icon: 'uil-user-check',
     //     link: '/ecommerce/orders',
     // },
-    {
-        id: 112,
-        label: 'MENUITEMS.PRUEBATRES.TEXT',
-        icon: 'uil-user-check',
-        link: '/contacts/list',
-    },
+    // {
+    //     id: 112,
+    //     label: 'MENUITEMS.PRUEBATRES.TEXT',
+    //     icon: 'uil-user-check',
+    //     link: '/contacts/list',
+    // },
     // {
     //     id: 113,
     //     label: 'MENUITEMS.PRUEBACUATRO.TEXT',
