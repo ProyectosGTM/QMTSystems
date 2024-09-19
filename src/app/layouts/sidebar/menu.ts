@@ -1,21 +1,21 @@
 import { MenuItem } from './menu.model';
 
 export const MENU: MenuItem[] = [
-    {
-        id: 1,
-        label: 'MENUITEMS.MENU.TEXT',
-        isTitle: true
-    },
-    {
-        id: 2,
-        label: 'MENUITEMS.DASHBOARDS.TEXT',
-        icon: 'uil-home-alt',
-        badge: {
-            variant: 'primary',
-            text: '01', //'MENUITEMS.DASHBOARDS.BADGE',
-        },
-        link: '/',
-    },
+    // {
+    //     id: 1,
+    //     label: 'MENUITEMS.MENU.TEXT',
+    //     isTitle: true
+    // },
+    // {
+    //     id: 2,
+    //     label: 'MENUITEMS.DASHBOARDS.TEXT',
+    //     icon: 'uil-home-alt',
+    //     badge: {
+    //         variant: 'primary',
+    //         text: '01',
+    //     },
+    //     link: '/',
+    // },
     // {
     //     id: 3,
     //     isLayout: true
@@ -25,30 +25,30 @@ export const MENU: MenuItem[] = [
     //     label: 'MENUITEMS.APPS.TEXT',
     //     isTitle: true
     // },
-     {
-         id: 5,
-         label: 'Usuarios',
-         icon: 'uil-users-alt',
-         link: '/calendar',
-     },
-     {
-         id: 6,
-         label: 'Permisos',
-         icon: 'uil-comments-alt',
-         link: '/chat',
-     },
-     {
-         id: 6,
-         label: 'Clientes',
-         icon: 'uil-user-check',
-         link: '/file-manager',
-     },
-     {
-        id: 6,
-        label: 'Roles',
-        icon: 'uil-gold',
-        link: '/file-manager',
-    },
+    //  {
+    //      id: 5,
+    //      label: 'Usuarios',
+    //      icon: 'uil-users-alt',
+    //      link: '/calendar',
+    //  },
+    //  {
+    //      id: 6,
+    //      label: 'Permisos',
+    //      icon: 'uil-comments-alt',
+    //      link: '/chat',
+    //  },
+    //  {
+    //      id: 6,
+    //      label: 'Clientes',
+    //      icon: 'uil-user-check',
+    //      link: '/file-manager',
+    //  },
+    //  {
+    //     id: 6,
+    //     label: 'Roles',
+    //     icon: 'uil-gold',
+    //     link: '/file-manager',
+    // },
      {
         id: 109,
          label: 'Trabajo',
@@ -56,10 +56,28 @@ export const MENU: MenuItem[] = [
     },
     {
          id: 110,
-         label: 'MENUITEMS.PRUEBA.TEXT',
+         label: 'Grid 1',
          icon: 'uil-money-withdraw',
          link: '/ecommerce/orders',
-     },
+    },
+    {
+        id: 110,
+        label: 'Grid 2',
+        icon: 'uil-money-withdraw',
+        link: '/ecommerce/orders',
+    },
+    {
+        id: 110,
+        label: 'Grid 3',
+        icon: 'uil-money-withdraw',
+        link: '/ecommerce/orders',
+    },
+    {
+        id: 110,
+        label: 'Grid 4',
+        icon: 'uil-money-withdraw',
+        link: '/ecommerce/orders',
+    },
     // {
     //     id: 7,
     //     label: 'MENUITEMS.ECOMMERCE.TEXT',

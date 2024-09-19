@@ -8,11 +8,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { environment } from '../../../../environments/environment';
+import { fadeInRightAnimation } from 'src/app/core/animations/fade-in-right.animation';
+import { fadeInUpAnimation } from 'src/app/core/animations/fade-in-up.animation';
+import { scaleInAnimation } from 'src/app/core/animations/scale-in.animation';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [fadeInRightAnimation, fadeInUpAnimation, scaleInAnimation]
 })
 
 /**
@@ -25,6 +29,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   error = '';
   returnUrl: string;
   public loading: boolean = false;
+  public textLogin: string = 'Iniciar Sesión';
 
   // set the currenr year
   year: number = new Date().getFullYear();
@@ -69,16 +74,24 @@ export class LoginComponent implements OnInit, AfterViewInit {
   onSubmit() {
     this.submitted = true;
 
+    this.loading = true;
+    this.textLogin = 'Cargando...';
     // stop here if form is invalid
     if (this.loginForm.invalid) {
+      this.loading = false;
+      this.textLogin = 'Iniciar Sesión';
       return;
     } else {
       if (environment.defaultauth === 'firebase') {
         this.authenticationService.login(this.f.email.value, this.f.password.value).then((res: any) => {
           document.body.removeAttribute('class');
-          this.router.navigate(['/']);
+          this.loading = false;
+      this.textLogin = 'Iniciar Sesión';
+          this.router.navigate(['/ecommerce/orders']);
         })
           .catch(error => {
+            this.loading = false;
+      this.textLogin = 'Iniciar Sesión';
             this.error = error ? error : '';
           });
       } else {
@@ -86,7 +99,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
           .pipe(first())
           .subscribe(
             data => {
-              this.router.navigate(['/']);
+              this.router.navigate(['/ecommerce/orders']);
             },
             error => {
               this.error = error ? error : '';
