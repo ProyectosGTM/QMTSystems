@@ -27,6 +27,7 @@ import { ChatComponent } from './chat/chat.component';
 import { FileManagerComponent } from './file-manager/file-manager.component';
 import { SharedModule } from '../shared/shared.module';
 import { DiagramaComponent } from './diagrama/diagrama.component';
+import { ListaBitacoraComponent } from './bitacora/lista-bitacora/lista-bitacora.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -34,7 +35,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
 };
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, FileManagerComponent],
+  declarations: [CalendarComponent, ChatComponent, FileManagerComponent, ListaBitacoraComponent],
   imports: [
     CommonModule,
     NgSelectModule,

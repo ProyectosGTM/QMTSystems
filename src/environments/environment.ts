@@ -4,18 +4,9 @@
 
 export const environment = {
   production: false,
-  googleMapsApiKey: 'YOUR_GOOGLE_MAPS_API_KEY',
-  defaultauth: 'fackbackend',
-  firebaseConfig: {
-    apiKey: '',
-    authDomain: '',
-    databaseURL: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: '',
-    measurementId: ''
-  }
+  stripe_token: 'STRIPE_TOKEN',
+  paypal_token: 'PAYPAL_TOKEN',
+  API_SECURITY: 'http://216.238.84.5:3001',
 };
 
 /*

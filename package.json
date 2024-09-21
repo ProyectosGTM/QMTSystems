@@ -68,6 +68,7 @@
     "ngx-owl-carousel-o": "^17.0.0",
     "ngx-pipes": "^3.2.2",
     "ngx-slider-v2": "^17.0.0",
+    "ngx-toastr": "^19.0.0",
     "ngx-ui-switch": "^15.0.0",
     "rxjs": "^7.8.1",
     "simplebar-angular": "^3.2.4",

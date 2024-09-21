@@ -5,7 +5,7 @@ import { DefaultComponent } from './dashboards/default/default.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ChatComponent } from './chat/chat.component';
 import { FileManagerComponent } from './file-manager/file-manager.component';
-import { DiagramaComponent } from './diagrama/diagrama.component';
+import { ListaBitacoraComponent } from './bitacora/lista-bitacora/lista-bitacora.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'dashboard' },
@@ -25,9 +25,14 @@ const routes: Routes = [
   { path: 'charts', loadChildren: () => import('./chart/chart.module').then(m => m.ChartModule) },
   { path: 'icons', loadChildren: () => import('./icons/icons.module').then(m => m.IconsModule) },
   { path: 'maps', loadChildren: () => import('./maps/maps.module').then(m => m.MapsModule) },
-  // { path: 'diagrama', component: DiagramaComponent },
-  { path: 'diagrama', loadChildren: () => import('./diagrama/diagrama.module').then(m => m.DiagramaModule)},
-  { path: 'estaciones', loadChildren: () => import('./estaciones/estaciones.module').then(m => m.EstacionesModule)}
+
+  { path: 'dispositivos', loadChildren: () => import('./dispositivos/dispositivos.module').then(m => m.DispositivosModule)},
+  { path: 'vehiculos', loadChildren: () => import('./vehiculos/vehiculos.module').then(m => m.VehiculosModule)},
+  { path: 'operadores', loadChildren: () => import('./operadores/operadores.module').then(m => m.OperadoresModule)},
+  { path: 'monederos', loadChildren: () => import('./monederos/monederos.module').then(m => m.MonederosModule)},
+  { path: 'pasajeros', loadChildren: () => import('./pasajeros/pasajeros.module').then(m => m.PasajerosModule)},
+  { path: 'transacciones', loadChildren: () => import('./transacciones/transacciones.module').then(m => m.TransaccionesModule)},
+  { path: 'bitacora', component: ListaBitacoraComponent },
 ];
 
 @NgModule({
