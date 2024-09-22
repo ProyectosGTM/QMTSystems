@@ -173,3 +173,16 @@ body[data-bs-theme=dark] {
     z-index: 2000; /* Ajusta según sea necesario */
   }
   
+  #pinButtonBlue {
+	background-color: transparent;
+	text-align: center;
+	border: 1px solid #50a5f1;
+	color: #50a5f1;
+}
+
+#pinButton {
+	background-color: transparent;
+	text-align: center;
+	border: 1px solid #28a745;
+	color: #28a745;
+}

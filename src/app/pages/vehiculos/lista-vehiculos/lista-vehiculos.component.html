@@ -36,7 +36,7 @@
 
                     <!-- Tabla de resultados -->
                     <div class="table-responsive mb-4 col-12 col-lg-12">
-                        <table class="table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
+                        <table class="data table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
                             <thead class="table-dark" style="height: 50px; font-weight: bold;">
                                 <tr>
                                     <th>ID</th>
@@ -49,28 +49,26 @@
                             <tbody>
                                 <tr *ngFor="let vehiculo of paginatedVehiculos">
                                     <td>{{ vehiculo.Id }}</td>
-                                    <td>{{ vehiculo.Marca }}</td>
-                                    <td>{{ vehiculo.Modelo }}</td>
-                                    <td>{{ vehiculo.Ano }}</td>
-                                    <td>{{ vehiculo.Placa }}</td>
+                                    <td [title]="vehiculo.Marca" class="truncated">{{ vehiculo.Marca }}</td>
+                                    <td [title]="vehiculo.Modelo" class="truncated">{{ vehiculo.Modelo }}</td>
+                                    <td [title]="vehiculo.Ano" class="truncated">{{ vehiculo.Ano }}</td>
+                                    <td [title]="vehiculo.Placa" class="truncated">{{ vehiculo.Placa }}</td>
                                 </tr>
                             </tbody>
                         </table>
-
-                        <!-- Controles de paginación -->
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <label class="d-inline-flex align-items-center">Mostrar
-                                <select [(ngModel)]="informacionPageSize" (change)="onPageSizeChange()" class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
-                                    <option *ngFor="let size of informacionPageSizeOptions" [value]="size">{{ size }}</option>
-                                </select>
-                            </label>
-                            <div class="pagination-controls ms-auto">
-                                <button class="btn btn-primary" [disabled]="informacionCurrentPage === 0" (click)="onPreviousPage()">Anterior</button>
-                                &nbsp;&nbsp;
-                                <span>Página {{ informacionCurrentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
-                                &nbsp;&nbsp;
-                                <button class="btn btn-primary" [disabled]="informacionCurrentPage === totalPages - 1" (click)="onNextPage()">Siguiente</button>
-                            </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <label class="d-inline-flex align-items-center">Mostrar
+                            <select [(ngModel)]="informacionPageSize" (change)="onPageSizeChange()" class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
+                                <option *ngFor="let size of informacionPageSizeOptions" [value]="size">{{ size }}</option>
+                            </select>
+                        </label>
+                        <div class="pagination-controls ms-auto">
+                            <button class="btn btn-primary" [disabled]="informacionCurrentPage === 0" (click)="onPreviousPage()">Anterior</button>
+                            &nbsp;&nbsp;
+                            <span>Página {{ informacionCurrentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
+                            &nbsp;&nbsp;
+                            <button class="btn btn-primary" [disabled]="informacionCurrentPage === totalPages - 1" (click)="onNextPage()">Siguiente</button>
                         </div>
                     </div>
                 </div>

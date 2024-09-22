@@ -37,8 +37,7 @@
                         </div>
                     </div>
                     <div class="table-responsive mb-4 col-12 col-lg-12">
-                        <table
-                            class="table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
+                        <table class="data table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
                             <thead class="table-dark" style="height: 50px; font-size: 18px;">
                                 <tr>
                                     <th>Acciones</th>
@@ -51,33 +50,33 @@
                             <tbody>
                                 <tr *ngFor="let transaccion of paginatedTransacciones">
                                     <td>
-                                        <button type="button" (click)="centerModal(centerDataModal, transaccion.Id, transaccion.Latitud, transaccion.Longitud, transaccion.FechaHora, transaccion.Monto, transaccion.TipoTransaccion)" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">
+                                        <button type="button" (click)="centerModal(centerDataModal, transaccion.Id, transaccion.Latitud, transaccion.Longitud, transaccion.FechaHora, transaccion.Monto, transaccion.TipoTransaccion)" class="btn btn-primary btn-md btn-rounded waves-effect waves-light">
                                             <i class="fa fa-map-pin"></i> Ver Ubicación
                                         </button>
                                     </td>
                                     <td>{{ transaccion.Id }}</td>
-                                    <td>{{ transaccion.TipoTransaccion }}</td>
-                                    <td>{{ transaccion.FechaHora | date: 'dd-MM-yyyy - HH:mm:ss a' }}</td>
-                                    <td>{{ transaccion.Monto | currency }}</td>
+                                    <td [title]="transaccion.TipoTransaccion" class="truncated">{{ transaccion.TipoTransaccion }}</td>
+                                    <td [title]="transaccion.FechaHora" class="truncated">{{ transaccion.FechaHora | date: 'dd/MM/yyyy HH:mm:ss a' : '+0000' }}</td>
+                                    <td [title]="transaccion.Monto" class="truncated">{{ transaccion.Monto | currency }}</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <label class="d-inline-flex align-items-center">Mostrar
-                                <select [(ngModel)]="pageSize" (change)="onPageSizeChange()"
-                                    class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
-                                    <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
-                                </select>
-                            </label>
-                            <div class="pagination-controls ms-auto">
-                                <button class="btn btn-primary" [disabled]="currentPage === 0"
-                                    (click)="onPreviousPage()">Anterior</button>
-                                &nbsp;&nbsp;
-                                <span>Página {{ currentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
-                                &nbsp;&nbsp;
-                                <button class="btn btn-primary" [disabled]="currentPage === totalPages - 1"
-                                    (click)="onNextPage()">Siguiente</button>
-                            </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <label class="d-inline-flex align-items-center">Mostrar
+                            <select [(ngModel)]="pageSize" (change)="onPageSizeChange()"
+                                class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
+                                <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
+                            </select>
+                        </label>
+                        <div class="pagination-controls ms-auto">
+                            <button class="btn btn-primary" [disabled]="currentPage === 0"
+                                (click)="onPreviousPage()">Anterior</button>
+                            &nbsp;&nbsp;
+                            <span>Página {{ currentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
+                            &nbsp;&nbsp;
+                            <button class="btn btn-primary" [disabled]="currentPage === totalPages - 1"
+                                (click)="onNextPage()">Siguiente</button>
                         </div>
                     </div>
                 </div>

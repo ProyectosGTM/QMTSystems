@@ -47,6 +47,11 @@ export class ListaBitacoraComponent implements OnInit {
     );
   }
 
+  getUserFromQuery(query: string): string {
+    const match = query.match(/UserName='([^']+)'/); // Expresión regular para capturar el valor de UserName
+    return match ? match[1] : 'Desconocido'; // Si encuentra el nombre de usuario, lo devuelve, de lo contrario, "Desconocido"
+  }
+
   filterBitacora(): void {
     // Filtramos los datos de acuerdo al término de búsqueda y a las fechas seleccionadas
     this.filteredBitacora = this.bitacoraList.filter((item) => {

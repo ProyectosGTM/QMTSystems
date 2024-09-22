@@ -138,3 +138,57 @@ h3 {
   display: inline-block; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
+
+.modal-content {
+  background: #52576e;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background: #007bff;
+  color: white;
+  border-radius: 12px 12px 0 0;
+  padding: 1rem;
+}
+
+.card {
+  border: none;
+  border-radius: 8px;
+}
+
+.card-header {
+  border-bottom: none;
+  background: #17a2b8;
+  font-size: 1.1rem;
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 1rem;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+}
+
+.btn-close:hover {
+  color: #ccc;
+}
+
+
+::ng-deep .swal2-container .swal2-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
+}
+
+.data {
+  min-width: 1000px;
+}

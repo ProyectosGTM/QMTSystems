@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="table-responsive mb-4 col-12 col-lg-12">
-                        <table class="table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
+                        <table class="data table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
                             <thead class="table-dark" style="height: 50px; font-size: 18px;">
                                 <tr>
                                     <th>ID</th>
@@ -45,26 +45,26 @@
                             <tbody>
                                 <tr *ngFor="let dispositivo of paginatedDispositivos">
                                     <td>{{ dispositivo.Id }}</td>
-                                    <td>{{ dispositivo.Estatus }}</td>
-                                    <td>{{ dispositivo.Marca }}</td>
-                                    <td>{{ dispositivo.Modelo }}</td>
-                                    <td>{{ dispositivo.NumeroSerie }}</td>
+                                    <td [title]="dispositivo.Estatus" class="truncated">{{ dispositivo.Estatus }}</td>
+                                    <td [title]="dispositivo.Marca" class="truncated">{{ dispositivo.Marca }}</td>
+                                    <td [title]="dispositivo.Modelo" class="truncated">{{ dispositivo.Modelo }}</td>
+                                    <td [title]="dispositivo.NumeroSerie" class="truncated">{{ dispositivo.NumeroSerie }}</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <label class="d-inline-flex align-items-center">Mostrar
-                                <select [(ngModel)]="pageSize" (change)="onPageSizeChange()" class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
-                                    <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
-                                </select>
-                            </label>
-                            <div class="pagination-controls ms-auto">
-                                <button class="btn btn-primary" [disabled]="currentPage === 0" (click)="onPreviousPage()">Anterior</button>
-                                &nbsp;&nbsp;
-                                <span>Página {{ currentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
-                                &nbsp;&nbsp;
-                                <button class="btn btn-primary" [disabled]="currentPage === totalPages - 1" (click)="onNextPage()">Siguiente</button>
-                            </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <label class="d-inline-flex align-items-center">Mostrar
+                            <select [(ngModel)]="pageSize" (change)="onPageSizeChange()" class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
+                                <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
+                            </select>
+                        </label>
+                        <div class="pagination-controls ms-auto">
+                            <button class="btn btn-primary" [disabled]="currentPage === 0" (click)="onPreviousPage()">Anterior</button>
+                            &nbsp;&nbsp;
+                            <span>Página {{ currentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
+                            &nbsp;&nbsp;
+                            <button class="btn btn-primary" [disabled]="currentPage === totalPages - 1" (click)="onNextPage()">Siguiente</button>
                         </div>
                     </div>
                 </div>

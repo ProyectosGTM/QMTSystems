@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="table-responsive mb-4 col-12 col-lg-12">
-                        <table class="table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
+                        <table class="data table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
                             <thead class="table-dark" style="height: 50px; font-size: 18px;">
                                 <tr>
                                     <th>ID</th>
@@ -47,28 +47,28 @@
                             <tbody>
                                 <tr *ngFor="let operador of paginatedOperadores">
                                     <td>{{ operador.Id }}</td>
-                                    <td>{{ operador.Nombre }}</td>
-                                    <td>{{ operador.ApellidoPaterno }}</td>
-                                    <td>{{ operador.ApellidoMaterno }}</td>
-                                    <td>{{ operador.Correo }}</td>
-                                    <td>{{ operador.NumeroLicencia }}</td>
-                                    <td>{{ operador.Telefono }}</td>
+                                    <td [title]="operador.Nombre" class="truncated">{{ operador.Nombre }}</td>
+                                    <td [title]="operador.ApellidoPaterno" class="truncated">{{ operador.ApellidoPaterno }}</td>
+                                    <td [title]="operador.ApellidoMaterno" class="truncated">{{ operador.ApellidoMaterno }}</td>
+                                    <td [title]="operador.Correo" class="truncated">{{ operador.Correo }}</td>
+                                    <td [title]="operador.NumeroLicencia" class="truncated">{{ operador.NumeroLicencia }}</td>
+                                    <td [title]="operador.Telefono" class="truncated">{{ operador.Telefono }}</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <label class="d-inline-flex align-items-center">Mostrar
-                                <select [(ngModel)]="pageSize" (change)="onPageSizeChange()" class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
-                                    <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
-                                </select>
-                            </label>
-                            <div class="pagination-controls ms-auto">
-                                <button class="btn btn-primary" [disabled]="currentPage === 0" (click)="onPreviousPage()">Anterior</button>
-                                &nbsp;&nbsp;
-                                <span>Página {{ currentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
-                                &nbsp;&nbsp;
-                                <button class="btn btn-primary" [disabled]="currentPage === totalPages - 1" (click)="onNextPage()">Siguiente</button>
-                            </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <label class="d-inline-flex align-items-center">Mostrar
+                            <select [(ngModel)]="pageSize" (change)="onPageSizeChange()" class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
+                                <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
+                            </select>
+                        </label>
+                        <div class="pagination-controls ms-auto">
+                            <button class="btn btn-primary" [disabled]="currentPage === 0" (click)="onPreviousPage()">Anterior</button>
+                            &nbsp;&nbsp;
+                            <span>Página {{ currentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
+                            &nbsp;&nbsp;
+                            <button class="btn btn-primary" [disabled]="currentPage === totalPages - 1" (click)="onNextPage()">Siguiente</button>
                         </div>
                     </div>
                 </div>

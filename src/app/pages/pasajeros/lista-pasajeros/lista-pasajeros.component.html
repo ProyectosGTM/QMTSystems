@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="table-responsive mb-4 col-12 col-lg-12">
-                        <table class="table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
+                        <table class="data table table-centered datatables dt-responsive nowrap table-card-list compact-table table-fixed">
                             <thead class="table-dark" style="height: 50px; font-size: 18px;">
                                 <tr>
                                     <th>ID</th>
@@ -46,27 +46,27 @@
                             <tbody>
                                 <tr *ngFor="let pasajero of paginatedPasajeros">
                                     <td>{{ pasajero.Id }}</td>
-                                    <td>{{ pasajero.Nombre }}</td>
-                                    <td>{{ pasajero.ApellidoPaterno }}</td>
-                                    <td>{{ pasajero.ApellidoMaterno }}</td>
-                                    <td>{{ pasajero.Correo }}</td>
-                                    <td>{{ pasajero.Telefono }}</td>
+                                    <td [title]="pasajero.Nombre" class="truncated">{{ pasajero.Nombre }}</td>
+                                    <td [title]="pasajero.ApellidoPaterno" class="truncated">{{ pasajero.ApellidoPaterno }}</td>
+                                    <td [title]="pasajero.ApellidoMaterno" class="truncated">{{ pasajero.ApellidoMaterno }}</td>
+                                    <td [title]="pasajero.Correo" class="truncated">{{ pasajero.Correo }}</td>
+                                    <td [title]="pasajero.Telefono" class="truncated">{{ pasajero.Telefono }}</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <label class="d-inline-flex align-items-center">Mostrar
-                                <select [(ngModel)]="pageSize" (change)="onPageSizeChange()" class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
-                                    <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
-                                </select>
-                            </label>
-                            <div class="pagination-controls ms-auto">
-                                <button class="btn btn-primary" [disabled]="currentPage === 0" (click)="onPreviousPage()">Anterior</button>
-                                &nbsp;&nbsp;
-                                <span>Página {{ currentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
-                                &nbsp;&nbsp;
-                                <button class="btn btn-primary" [disabled]="currentPage === totalPages - 1" (click)="onNextPage()">Siguiente</button>
-                            </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <label class="d-inline-flex align-items-center">Mostrar
+                            <select [(ngModel)]="pageSize" (change)="onPageSizeChange()" class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm">
+                                <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
+                            </select>
+                        </label>
+                        <div class="pagination-controls ms-auto">
+                            <button class="btn btn-primary" [disabled]="currentPage === 0" (click)="onPreviousPage()">Anterior</button>
+                            &nbsp;&nbsp;
+                            <span>Página {{ currentPage + 1 }} de {{ totalPages }} ({{ totalRecords }} items)</span>
+                            &nbsp;&nbsp;
+                            <button class="btn btn-primary" [disabled]="currentPage === totalPages - 1" (click)="onNextPage()">Siguiente</button>
                         </div>
                     </div>
                 </div>
