@@ -93,14 +93,18 @@
     <ng-template #centerDataModalRecarga let-modal>
         <form [formGroup]="recargaForm">
             <div class="modal-content p-3">
-                <div class="modal-header border-bottom-0">
-                    <h4 class="modal-title mx-auto">Realizar Recarga</h4><br>
-                    <h5 style="margin-top: -3%;">ID: {{ selectedTransactionId }}   -   Número Serie: {{selectedSerie}}</h5>
-                </div>
-                <div class="card mb-3 mt-2">
-                    <div class="card-body">
-                        <label><i class="fa fa-money"></i> Monto</label>
-                        <input formControlName="Monto" class="form-control" type="number" placeholder="Ingrese un monto" />
+                <div class="modal-body">
+                    <div class="card mb-3 shadow-sm">
+                      <div class="modal-header border-bottom-0 card-header bg-primary text-white">
+                        <h4 class="modal-title mx-auto">Realizar Recarga</h4><br>
+                        <h5 style="margin-top: -3%;">ID: {{ selectedTransactionId }}   -   Número Serie: {{selectedSerie}}</h5>
+                      </div>
+                      <div class="card mb-3 mt-2">
+                        <div class="card-body">
+                            <label><i class="fa fa-money"></i> Monto</label>
+                            <input formControlName="Monto" class="form-control" type="number" placeholder="Ingrese un monto" />
+                        </div>
+                      </div>
                     </div>
                 </div>
                 <div class="modal-footer border-top-0">
